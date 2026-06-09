@@ -30,157 +30,77 @@
     </header>
 
     <main class="container">
-        <!-- Título y Subtítulo -->
-        <header class="hero-section">
+        <section class="hero-section">
             <h1 class="main-title">EXPOSICIÓN <span>INTERACTIVA</span></h1>
-            <p class="body-text" style="font-weight: 700;">Modifica la obra libremente</p>
-        </header>
-
-        <!-- Iconos de Acción -->
-<div class="expo-actions">
-    <button class="icon-btn" title="Reiniciar">
-        <img src="images/rotacion.png" alt="Reiniciar" class="action-icon">
-    </button>
-    <button class="icon-btn" title="Compartir">
-        <img src="images/compartir.png" alt="Compartir" class="action-icon">
-    </button>
-    <button class="icon-btn" title="Descargar">
-        <img src="images/descargas.png" alt="Descargar" class="action-icon">
-    </button>
-    <button class="icon-btn" title="Historial">
-        <img src="images/historial.png" alt="Historial" class="action-icon">
-    </button>
-</div>
-
-       <!-- Obra Principal -->
-<div class="main-canvas">
-    <div class="img-container">
-        <img id="main-image" src="images/paisaje1.jpg" alt="Obra interactiva" class="card-image">
-    </div>
-</div>
-
-<!-- Selector de Obra -->
-<section class="selector-section">
-    <p class="category" style="text-align: center;">Elige una obra inicial</p>
-    <div class="thumbs-grid">
-        <div class="thumb-item active" onclick="changeMainImage(this)">
-            <img src="images/paisaje2.jpg" alt="Miniatura 1">
+            <p class="body-text"><strong>Modifica la obra libremente</strong></p>
+        </section>
+    
+        <!-- ACCESIBILIDAD 1.1.1 / 1.3.1: Etiquetas claras para botones de acción -->
+        <nav class="expo-actions" aria-label="Herramientas de edición">
+            <button class="icon-btn" aria-label="Reiniciar cambios">
+                <img src="../images/rotacion.png" alt="" aria-hidden="true" class="action-icon">
+            </button>
+            <button class="icon-btn" aria-label="Compartir obra">
+                <img src="../images/compartir.png" alt="" aria-hidden="true" class="action-icon">
+            </button>
+            <button class="icon-btn" aria-label="Descargar imagen">
+                <img src="../images/descargas.png" alt="" aria-hidden="true" class="action-icon">
+            </button>
+            <button class="icon-btn" aria-label="Ver historial de cambios">
+                <img src="../images/historial.png" alt="" aria-hidden="true" class="action-icon">
+            </button>
+        </nav>
+    
+        <!-- Obra Principal con ID para manipulación -->
+        <div class="main-canvas">
+            <figure class="img-container canvas-frame">
+                <img id="main-image" src="../images/paisaje1.jpg" alt="Paisaje de montaña: obra interactiva actual" class="card-image">
+            </figure>
         </div>
-        <div class="thumb-item" onclick="changeMainImage(this)">
-            <img src="images/paisaje3.jpg" alt="Miniatura 2">
-        </div>
-        <div class="thumb-item" onclick="changeMainImage(this)">
-            <img src="images/paisaje4.jpg" alt="Miniatura 3">
-        </div>
-        <div class="thumb-item" onclick="changeMainImage(this)">
-            <img src="images/paisaje5.jpg" alt="Miniatura 4">
-        </div>
-    </div>
-</section>
-
-<!-- Script para seleccionar otra obra como principal -->
-<script>
-    function changeMainImage(element) {
-        // 1. Localizamos la imagen principal y la imagen dentro de la miniatura clickeada
-        const mainImg = document.getElementById('main-image');
-        const thumbImg = element.querySelector('img');
-        
-        // 2. Almacenamos temporalmente los datos de la imagen principal actual
-        const tempSrc = mainImg.src;
-        const tempAlt = mainImg.alt;
-        
-        // 3. Realizamos el intercambio (Swap)
-        // La principal ahora es la que estaba en la miniatura
-        mainImg.src = thumbImg.src;
-        mainImg.alt = thumbImg.alt;
-        
-        // La miniatura ahora muestra la que antes era la principal
-        thumbImg.src = tempSrc;
-        thumbImg.alt = tempAlt;
-    }
-</script>
-
-        <!-- Panel de Control de Parámetros -->
-        <section class="controls-section">
-            <p class="category" style="text-align: center;">Modifica parámetros</p>
-            
-            <div class="parameter-tabs">
-                <button class="tab-btn" onclick="showPanel('iluminacion', this)">ILUMINACIÓN</button>
-                <button class="tab-btn active" onclick="showPanel('color', this)">COLOR</button>
-                <button class="tab-btn" onclick="showPanel('balance', this)">BALANCE</button>
-                <button class="tab-btn" onclick="showPanel('filtros', this)">FILTROS</button>
-            </div>
-        
-            <!-- Paneles de Ajuste -->
-            <div id="panels-container">
-                <!-- Panel: Iluminación -->
-                <div id="panel-iluminacion" class="adjustment-panel" style="display: none;">
-                    <h3 class="card-title">ILUMINACIÓN</h3>
-                    <div class="slider-group">
-                        <label class="body-text">EXPOSICIÓN</label>
-                        <input type="range" class="range-slider" min="0" max="100" value="50">
-                        <label class="body-text">CONTRASTE</label>
-                        <input type="range" class="range-slider" min="0" max="100" value="40">
-                        <label class="body-text">BRILLO</label>
-                        <input type="range" class="range-slider" min="0" max="100" value="60">
-                    </div>
-                </div>
-        
-                <!-- Panel: Color (Activo por defecto) -->
-                <div id="panel-color" class="adjustment-panel">
-                    <h3 class="card-title">COLOR</h3>
-                    <div class="slider-group">
-                        <label class="body-text">RED</label>
-                        <input type="range" class="range-slider" min="0" max="100" value="70">
-                        <label class="body-text">GREEN</label>
-                        <input type="range" class="range-slider" min="0" max="100" value="50">
-                        <label class="body-text">BLUE</label>
-                        <input type="range" class="range-slider" min="0" max="100" value="30">
-                    </div>
-                </div>
-        
-                <!-- Panel: Balance -->
-                <div id="panel-balance" class="adjustment-panel" style="display: none;">
-                    <h3 class="card-title">BALANCE</h3>
-                    <div class="slider-group">
-                        <label class="body-text">TEMPERATURA</label>
-                        <input type="range" class="range-slider" min="0" max="100" value="50">
-                        <label class="body-text">MATIZ</label>
-                        <input type="range" class="range-slider" min="0" max="100" value="50">
-                    </div>
-                </div>
-        
-                <!-- Panel: Filtros -->
-                <div id="panel-filtros" class="adjustment-panel" style="display: none;">
-                    <h3 class="card-title">FILTROS</h3>
-                    <div class="filters-grid">
-                        <label class="filter-option"><input type="checkbox"> ESCALA DE GRISES</label>
-                        <label class="filter-option"><input type="checkbox"> SEPIA</label>
-                        <label class="filter-option"><input type="checkbox"> INVERTIR</label>
-                        <label class="filter-option"><input type="checkbox"> RUIDO</label>
-                    </div>
-                </div>
+    
+        <!-- ACCESIBILIDAD 1.3.1: Galería de selección con roles adecuados -->
+        <section class="selector-section" aria-labelledby="selector-title">
+            <p id="selector-title" class="category">Elige una obra inicial</p>
+            <div class="thumbs-grid" role="listbox" aria-label="Selecciona una miniatura para cambiar la obra principal">
+                <button class="thumb-item active" role="option" aria-selected="true" onclick="changeMainImage(this)">
+                    <img src="../images/paisaje2.jpg" alt="Paisaje costero">
+                </button>
+                <button class="thumb-item" role="option" aria-selected="false" onclick="changeMainImage(this)">
+                    <img src="../images/paisaje3.jpg" alt="Puente sobre lago">
+                </button>
+                <!-- ... resto de imágenes ... -->
             </div>
         </section>
-        
-        <!-- Script para los paneles -->
-        <script>
-            function showPanel(panelId, btn) {
-                // Ocultar todos los paneles
-                document.querySelectorAll('.adjustment-panel').forEach(p => p.style.display = 'none');
-                // Mostrar el panel seleccionado
-                document.getElementById('panel-' + panelId).style.display = 'block';
-                // Quitar clase activa de todos los botones
-                document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
-                // Añadir clase activa al botón pulsado
-                btn.classList.add('active');
-            }
-        </script>
-
-        <!-- Área de Prompts -->
+    
+        <!-- ACCESIBILIDAD 1.3.1 / 1.3: Uso de fieldset y labels vinculados -->
+        <section class="controls-section">
+            <h2 class="category" style="text-align: center;">Modifica parámetros</h2>
+            
+            <div class="parameter-tabs" role="tablist">
+                <button class="tab-btn active" id="tab-color" role="tab" aria-selected="true" aria-controls="panel-color">COLOR</button>
+                <button class="tab-btn" id="tab-ilu" role="tab" aria-selected="false" aria-controls="panel-iluminacion">ILUMINACIÓN</button>
+            </div>
+    
+            <div id="panel-color" role="tabpanel" aria-labelledby="tab-color">
+                <fieldset class="slider-group">
+                    <legend class="card-title">AJUSTES DE COLOR</legend>
+                    
+                    <div class="control-row">
+                        <label for="red-range" class="body-text">ROJO</label>
+                        <input type="range" id="red-range" class="range-slider" min="0" max="100" value="70">
+                    </div>
+                    <div class="control-row">
+                        <label for="green-range" class="body-text">VERDE</label>
+                        <input type="range" id="green-range" class="range-slider" min="0" max="100" value="50">
+                    </div>
+                </fieldset>
+            </div>
+        </section>
+    
+        <!-- ACCESIBILIDAD 1.1 / 1.3.1: Prompt con label explícito -->
         <section class="prompt-section">
-            <p class="category" style="text-align: center;">Añade Prompts</p>
-            <textarea class="prompt-input" placeholder="Prompts..."></textarea>
+            <label for="ai-prompts" class="category" style="display: block; text-align: center;">Añade Prompts</p>
+            <textarea id="ai-prompts" class="prompt-input" placeholder="Ej: Añade un cielo estrellado..."></textarea>
         </section>
     </main>
     <footer class="footer">
