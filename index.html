@@ -1,29 +1,29 @@
 <!DOCTYPE html>
 <html lang="es">
+<!-- configuración y recursos -->
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Canva & Code - Inicio Alta Fidelidad</title>
-    <!-- Carga de tipografías desde Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Rokkitt:wght@300;400;700&family=Ubuntu:wght@400;700&display=swap" rel="stylesheet">
-    <!-- Ruta actualizada para los estilos en la carpeta css -->
     <link rel="stylesheet" href="CSS/style.css"> 
 </head>
 <body>
+    <!-- ENCABEZADO -->
     <header class="header">
         <div class="top-bar">
-            <!-- Ruta actualizada para el logotipo en la carpeta images -->
             <img src="images/logotipo.png" alt="Logo Canva & Code" class="logo-circular">
             <button class="btn-private">ÁREA PRIVADA</button>
         </div>
         
-        <nav class="button-nav">
+    <!-- BOTONES DE NAVEGACIÓN -->
+       <nav class="button-nav">
             <a href="about.html" class="nav-btn">ABOUT US</a>
             <a href="#" class="nav-btn">HISTORIA DEL FESTIVAL</a>
             <a href="#" class="nav-btn">EQUIPO</a>
             <a href="#" class="nav-btn">SPONSORS</a>
-            <a href="#" class="nav-btn">EXPOSICIÓN INTERACTIVA</a>
-            <a href="#" class="nav-btn">COMUNIDAD</a>
+            <a href="expo.html" class="nav-btn">EXPOSICIÓN INTERACTIVA</a>
+            <a href="comunidad.html" class="nav-btn">COMUNIDAD</a>
         </nav>
     </header>
 
@@ -76,7 +76,10 @@
 
             <!-- Sección: Exposición Interactiva -->
             <section class="card">
-                <img src="images/compras.jpg" alt="Entradas" class="card-image">
+                
+                <a href="expo.html" class="img-link">
+                    <img src="images/compras.jpg" alt="Entradas" class="card-image">
+                </a>
                 <div class="card-info">
                     <h2 class="card-title">EXPOSICIÓN INTERACTIVA</h2>
                     <p class="body-text">Modifica parámetros de la obra en tiempo real.</p>
@@ -85,8 +88,10 @@
 
             <!-- Sección: Comunidad -->
             <section class="card">
-                <img src="images/gente.jpg" alt="Comunidad" class="card-image">
-                <div class="card-info">
+                <a href="comunidad.html" class="img-link">
+                    <img src="images/gente.jpg" alt="Comunidad" class="card-image">
+                </a>
+                 <div class="card-info">
                     <h2 class="card-title">COMUNIDAD</h2>
                     <p class="body-text">Espacio de diálogo para foros técnicos.</p>
                 </div>
@@ -94,5 +99,33 @@
 
         </div>
     </main>
+        
+    <!-- PIE DE PÁGINA -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <p class="body-text">2026 CANVAS & CODE.</p>
+                
+    <!-- Redes Sociales -->
+                <div class="social-links">
+                    <a href="https://facebook.com" target="_blank" class="social-btn">
+                        <img src="images/facebook.png" alt="Facebook">
+                    </a>
+                    <a href="https://X.com" target="_blank" class="social-btn">
+                        <img src="images/xlogo.png" alt="X">
+                    </a>
+                    <a href="https://instagram.com" target="_blank" class="social-btn">
+                        <img src="images/instagram.png" alt="Instagram">
+                    </a>
+                    <a href="https://tiktok.com" target="_blank" class="social-btn">
+                        <img src="images/tik-tok.png" alt="TikTok">
+                    </a>
+                    <a href="https://whatsapp.com" target="_blank" class="social-btn">
+                        <img src="images/whatsapp.png" alt="WhatsApp">
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
 </body>
 </html>

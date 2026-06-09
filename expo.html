@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<!-- configuración y recursos -->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exposición Interactiva - Canva & Code</title>
+    <link href="https://fonts.googleapis.com/css2?family=Rokkitt:wght@300;400;700&family=Ubuntu:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<!-- ENCABEZADO -->
+    <header class="header">
+        <div class="container">
+            <div class="top-bar">
+                <img src="images/logotipo.png" alt="Logo Canva & Code" class="logo-circular">
+                <button class="btn-private">ÁREA PRIVADA</button>
+            </div>
+            <nav class="button-nav">
+                <a href="index.html" class="nav-btn">INICIO</a>
+                <a href="about.html" class="nav-btn">ABOUT US</a>
+                <a href="#" class="nav-btn">HISTORIA DEL FESTIVAL</a>
+                <a href="#" class="nav-btn">EQUIPO</a>
+                <a href="#" class="nav-btn">SPONSORS</a>
+                <a href="expo.html" class="nav-btn active">EXPOSICIÓN INTERACTIVA</a>
+                <a href="comunidad.html" class="nav-btn">COMUNIDAD</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <!-- Título y Subtítulo -->
+        <header class="hero-section">
+            <h1 class="main-title">EXPOSICIÓN <span>INTERACTIVA</span></h1>
+            <p class="body-text" style="font-weight: 700;">Modifica la obra libremente</p>
+        </header>
+
+        <!-- Iconos de Acción -->
+<div class="expo-actions">
+    <button class="icon-btn" title="Reiniciar">
+        <img src="images/rotacion.png" alt="Reiniciar" class="action-icon">
+    </button>
+    <button class="icon-btn" title="Compartir">
+        <img src="images/compartir.png" alt="Compartir" class="action-icon">
+    </button>
+    <button class="icon-btn" title="Descargar">
+        <img src="images/descargas.png" alt="Descargar" class="action-icon">
+    </button>
+    <button class="icon-btn" title="Historial">
+        <img src="images/historial.png" alt="Historial" class="action-icon">
+    </button>
+</div>
+
+       <!-- Obra Principal -->
+<div class="main-canvas">
+    <div class="img-container">
+        <img id="main-image" src="images/paisaje1.jpg" alt="Obra interactiva" class="card-image">
+    </div>
+</div>
+
+<!-- Selector de Obra -->
+<section class="selector-section">
+    <p class="category" style="text-align: center;">Elige una obra inicial</p>
+    <div class="thumbs-grid">
+        <div class="thumb-item active" onclick="changeMainImage(this)">
+            <img src="images/paisaje2.jpg" alt="Miniatura 1">
+        </div>
+        <div class="thumb-item" onclick="changeMainImage(this)">
+            <img src="images/paisaje3.jpg" alt="Miniatura 2">
+        </div>
+        <div class="thumb-item" onclick="changeMainImage(this)">
+            <img src="images/paisaje4.jpg" alt="Miniatura 3">
+        </div>
+        <div class="thumb-item" onclick="changeMainImage(this)">
+            <img src="images/paisaje5.jpg" alt="Miniatura 4">
+        </div>
+    </div>
+</section>
+
+<!-- Script para seleccionar otra obra como principal -->
+<script>
+    function changeMainImage(element) {
+        // 1. Localizamos la imagen principal y la imagen dentro de la miniatura clickeada
+        const mainImg = document.getElementById('main-image');
+        const thumbImg = element.querySelector('img');
+        
+        // 2. Almacenamos temporalmente los datos de la imagen principal actual
+        const tempSrc = mainImg.src;
+        const tempAlt = mainImg.alt;
+        
+        // 3. Realizamos el intercambio (Swap)
+        // La principal ahora es la que estaba en la miniatura
+        mainImg.src = thumbImg.src;
+        mainImg.alt = thumbImg.alt;
+        
+        // La miniatura ahora muestra la que antes era la principal
+        thumbImg.src = tempSrc;
+        thumbImg.alt = tempAlt;
+    }
+</script>
+
+        <!-- Panel de Control de Parámetros -->
+        <section class="controls-section">
+            <p class="category" style="text-align: center;">Modifica parámetros</p>
+            
+            <div class="parameter-tabs">
+                <button class="tab-btn" onclick="showPanel('iluminacion', this)">ILUMINACIÓN</button>
+                <button class="tab-btn active" onclick="showPanel('color', this)">COLOR</button>
+                <button class="tab-btn" onclick="showPanel('balance', this)">BALANCE</button>
+                <button class="tab-btn" onclick="showPanel('filtros', this)">FILTROS</button>
+            </div>
+        
+            <!-- Paneles de Ajuste -->
+            <div id="panels-container">
+                <!-- Panel: Iluminación -->
+                <div id="panel-iluminacion" class="adjustment-panel" style="display: none;">
+                    <h3 class="card-title">ILUMINACIÓN</h3>
+                    <div class="slider-group">
+                        <label class="body-text">EXPOSICIÓN</label>
+                        <input type="range" class="range-slider" min="0" max="100" value="50">
+                        <label class="body-text">CONTRASTE</label>
+                        <input type="range" class="range-slider" min="0" max="100" value="40">
+                        <label class="body-text">BRILLO</label>
+                        <input type="range" class="range-slider" min="0" max="100" value="60">
+                    </div>
+                </div>
+        
+                <!-- Panel: Color (Activo por defecto) -->
+                <div id="panel-color" class="adjustment-panel">
+                    <h3 class="card-title">COLOR</h3>
+                    <div class="slider-group">
+                        <label class="body-text">RED</label>
+                        <input type="range" class="range-slider" min="0" max="100" value="70">
+                        <label class="body-text">GREEN</label>
+                        <input type="range" class="range-slider" min="0" max="100" value="50">
+                        <label class="body-text">BLUE</label>
+                        <input type="range" class="range-slider" min="0" max="100" value="30">
+                    </div>
+                </div>
+        
+                <!-- Panel: Balance -->
+                <div id="panel-balance" class="adjustment-panel" style="display: none;">
+                    <h3 class="card-title">BALANCE</h3>
+                    <div class="slider-group">
+                        <label class="body-text">TEMPERATURA</label>
+                        <input type="range" class="range-slider" min="0" max="100" value="50">
+                        <label class="body-text">MATIZ</label>
+                        <input type="range" class="range-slider" min="0" max="100" value="50">
+                    </div>
+                </div>
+        
+                <!-- Panel: Filtros -->
+                <div id="panel-filtros" class="adjustment-panel" style="display: none;">
+                    <h3 class="card-title">FILTROS</h3>
+                    <div class="filters-grid">
+                        <label class="filter-option"><input type="checkbox"> ESCALA DE GRISES</label>
+                        <label class="filter-option"><input type="checkbox"> SEPIA</label>
+                        <label class="filter-option"><input type="checkbox"> INVERTIR</label>
+                        <label class="filter-option"><input type="checkbox"> RUIDO</label>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Script para los paneles -->
+        <script>
+            function showPanel(panelId, btn) {
+                // Ocultar todos los paneles
+                document.querySelectorAll('.adjustment-panel').forEach(p => p.style.display = 'none');
+                // Mostrar el panel seleccionado
+                document.getElementById('panel-' + panelId).style.display = 'block';
+                // Quitar clase activa de todos los botones
+                document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+                // Añadir clase activa al botón pulsado
+                btn.classList.add('active');
+            }
+        </script>
+
+        <!-- Área de Prompts -->
+        <section class="prompt-section">
+            <p class="category" style="text-align: center;">Añade Prompts</p>
+            <textarea class="prompt-input" placeholder="Prompts..."></textarea>
+        </section>
+    </main>
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <p class="body-text">2026 CANVAS & CODE.</p>
+                
+                <!-- Redes Sociales-->
+                <div class="social-links">
+                    <a href="https://facebook.com" target="_blank" class="social-btn">
+                        <img src="images/facebook.png" alt="Facebook">
+                    </a>
+                    <a href="https://X.com" target="_blank" class="social-btn">
+                        <img src="images/xlogo.png" alt="X">
+                    </a>
+                    <a href="https://instagram.com" target="_blank" class="social-btn">
+                        <img src="images/instagram.png" alt="Instagram">
+                    </a>
+                    <a href="https://tiktok.com" target="_blank" class="social-btn">
+                        <img src="images/tik-tok.png" alt="TikTok">
+                    </a>
+                    <a href="https://whatsapp.com" target="_blank" class="social-btn">
+                        <img src="images/whatsapp.png" alt="WhatsApp">
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

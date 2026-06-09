@@ -1,17 +1,16 @@
 <!DOCTYPE html>
 <html lang="es">
-    
+ <!-- configuración y recursos -->
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About Us - Canva & Code</title>
-    <!-- Carga de tipografías: Ubuntu y Rokkitt -->
     <link href="https://fonts.googleapis.com/css2?family=Rokkitt:wght@300;400;700&family=Ubuntu:wght@400;700&display=swap" rel="stylesheet">
-    <!-- Ruta al CSS -->
     <link rel="stylesheet" href="CSS/style.css">
 </head>
 <body>
-    <header class="header">
+<!-- ENCABEZADO -->
+<header class="header">
         <div class="container">
             <div class="top-bar">
                 <img src="images/logotipo.png" alt="Logo Canva & Code" class="logo-circular">
@@ -24,45 +23,130 @@
                 <a href="#" class="nav-btn">HISTORIA DEL FESTIVAL</a>
                 <a href="#" class="nav-btn">EQUIPO</a>
                 <a href="#" class="nav-btn">SPONSORS</a>
-                <a href="#" class="nav-btn">EXPOSICIÓN INTERACTIVA</a>
-                <a href="#" class="nav-btn">COMUNIDAD</a>
+                <a href="expo.html" class="nav-btn">EXPOSICIÓN INTERACTIVA</a>
+                <a href="comunidad.html" class="nav-btn">COMUNIDAD</a>
             </nav>
         </div>
     </header>
 
     <main class="container">
-        <!-- Título principal de la página -->
-        <section class="hero-section">
-            <h1 class="main-title">ABOUT US</h1>
-        </section>
-    
-        <!-- Sección 1: Deberías saber -->
-        <article class="content-block">
-            <h2 class="card-title">DEBERÍAS SABER</h2>
-            <p class="body-text">
-                El festival Canva & Code nace con la intención de remarcar que, si bien el medio de creación puede ser la IA, el autor de las obras sigue siendo la persona que está detrás del proyecto [3]. Buscamos acercar posturas entre quienes sienten la IA como una herramienta fría y quienes la utilizan como un medio de expresión creativo [4].
-            </p>
-        </article>
-    
-        <!-- Sección 2: Objetivos (Con fondo distinto) -->
-        <section class="section-highlight">
-            <div class="container-inner">
-                <h2 class="card-title">OBJETIVOS</h2>
-                
-                <div class="objectives-layout">
-                    <ul class="body-text objectives-list">
-                        <li>Desmitificar la IA como herramienta deshumanizada.</li>
-                        <li>Atraer artistas y a perfiles tecnológicos.</li>
-                        <li>Lograr un mayor reconocimiento de marca.</li>
-                        <li>Diseñar una experiencia web inmersiva [4].</li>
-                    </ul>
-    
-                    <div class="img-container objective-frame">
-                        <img src="images/objetivos.jpg" alt="objetivos" class="card-image">
-                    </div>
+    <!-- Título Principal -->
+    <header class="hero-section">
+        <h1 class="main-title">ABOUT US</h1>
+    </header>
+
+    <!-- Sección 1: Deberías saber -->
+    <section class="content-block">
+        <h2 class="card-title">DEBERÍAS SABER</h2>
+        <p class="body-text">
+El festival tiene la intención de remarcar que, si bien el medio de creación
+puede ser la IA, el autor de las obras sigue siendo la persona que está detrás del
+proyecto.
+Se trata también de desmitificar la IA como herramienta distante en el diseño
+creativo, y acercar las posturas entre quienes la sienten una herramienta fría y
+que amenaza la creatividad tradicional, y quienes se han acostumbrado a utilizarla
+casi para cualquier cosa.        </p>
+    </section>
+
+    <!-- Sección 2: Objetivos -->
+    <section class="section-highlight">
+        <div class="container-inner">
+            <h2 class="card-title" style="text-align: center;">OBJETIVOS</h2>
+            <div class="objectives-3col">
+                <ul class="body-text side-column">
+                    <li>Desmitificar la inteligencia artificial como heramienta deshumanizada</li>
+                    <li>Atraer artistas y perfiles tecnológicos</li>
+                </ul>
+                <div class="img-container objective-frame central-image">
+                    <img src="../images/objetivos.jpg" alt="Objetivos" class="card-image">
                 </div>
+                <ul class="body-text side-column">
+                    <li>Lograr reconocimiento de marca</li>
+                    <li>Diseñar una experiencia web inmersiva</li>
+                </ul>
             </div>
-        </section>
-    </main>
+        </div>
+    </section>
+
+    <!-- Sección 3: Origen del Festival -->
+    <section class="origen-festival" style="padding: 60px 0;">
+        <h2 class="card-title">ORIGEN DEL FESTIVAL</h2>
+        <p class="body-text" style="margin-bottom: 30px;">
+El festival nace con la idea de acortar el espacio entre el diseño creativo y el más
+formalmente académico, para desde un contenido bien estructurado a la vez que
+visual y llamativo, crear espacios donde la información pueda ser más fácilmente
+consultada y contrastada.</p>
+        <div class="images-grid-2col">
+            <div class="img-container frame-style">
+                <img src="../images/publico.jpg" alt="Origen" class="card-image">
+            </div>
+            <div class="img-container frame-style">
+                <img src="../images/partnership.jpg" alt="Alianzas" class="card-image">
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección 4: Concepto -->
+      <section class="section-highlight">
+        <h2 class="card-title underlined-title">CONCEPTO DEL FESTIVAL</h2>
+        <div class="two-columns-layout">
+            <p class="body-text">
+Se logrará desmitificar la IA como herramienta distante en el diseño
+creativo, y acercar las posturas entre quienes la sienten una herramienta fría y
+que amenaza la creatividad tradicional, y quienes se han acostumbrado a utilizarla casi para cualquier cosa.</p>
+            <div class="img-container concept-frame">
+                <img src="../images/robot.jpg" alt="Concepto Robot" class="card-image">
+            </div>
+        </div>
+    </section>
+  <!-- Sección 5: Vive la experiencia -->
+<section class="experience-section">
+    <div class="container">
+        <h2 class="main-title">VIVE LA <span>EXPERIENCIA</span></h2>
+        
+        <div class="experience-display">
+            <div class="experience-item side">
+                <img src="../images/publico.jpg" alt="Ambiente del festival" class="experience-img">
+            </div>
+
+            <div class="experience-item center">
+                <img src="../images/gente.jpg" alt="Comunidad Canva & Code" class="experience-img">
+            </div>
+
+            <div class="experience-item side">
+                <img src="../images/compras.jpg" alt="Interacción con el arte" class="experience-img">
+            </div>
+        </div>
+    </div>
+</section>
+</main>
+
+<!-- PIE DE PÁGINA -->
+<footer class="footer">
+    <div class="container">
+        <div class="footer-content">
+            <p class="body-text">2026 CANVAS & CODE.</p>
+            
+            <!-- Redes Sociales-->
+            <div class="social-links">
+                <a href="https://facebook.com" target="_blank" class="social-btn">
+                    <img src="images/facebook.png" alt="Facebook">
+                </a>
+                <a href="https://X.com" target="_blank" class="social-btn">
+                    <img src="images/xlogo.png" alt="X">
+                </a>
+                <a href="https://instagram.com" target="_blank" class="social-btn">
+                    <img src="images/instagram.png" alt="Instagram">
+                </a>
+                <a href="https://tiktok.com" target="_blank" class="social-btn">
+                    <img src="images/tik-tok.png" alt="TikTok">
+                </a>
+                <a href="https://whatsapp.com" target="_blank" class="social-btn">
+                    <img src="images/whatsapp.png" alt="WhatsApp">
+                </a>
+            </div>
+        </div>
+    </div>
+</footer>
 </body>
 </html>
