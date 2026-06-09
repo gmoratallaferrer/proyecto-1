@@ -57,7 +57,7 @@
         </div>
     
         <section class="selector-section" aria-labelledby="selector-title">
-            <p id="selector-title" class="category">Elige una obra inicial</p>
+            <h3 id="selector-title" class="category">Elige una obra inicial</h3>
             <div class="thumbs-grid" role="listbox" aria-label="Selecciona una miniatura para cambiar la obra principal">
                 <button class="thumb-item active" role="option" aria-selected="true" onclick="changeMainImage(this)">
                     <img src="images/paisaje2.jpg" alt="Puente sobre el lago">
@@ -119,7 +119,7 @@
     <div id="panels-container">
         <!-- Panel: Iluminación -->
         <div id="panel-iluminacion" class="adjustment-panel" style="display: none;">
-            <h3 class="card-title">ILUMINACIÓN</h3>
+            <h2 class="card-title">ILUMINACIÓN</h2>
             <div class="slider-group">
                 <label class="body-text">EXPOSICIÓN</label>
                 <input type="range" class="range-slider" min="0" max="100" value="50">
@@ -132,7 +132,7 @@
 
         <!-- Panel: Color (Activo por defecto) -->
         <div id="panel-color" class="adjustment-panel">
-            <h3 class="card-title">COLOR</h3>
+            <h2 class="card-title">COLOR</h2>
             <div class="slider-group">
                 <label class="body-text">RED</label>
                 <input type="range" class="range-slider" min="0" max="100" value="70">
@@ -145,7 +145,7 @@
 
         <!-- Panel: Balance -->
         <div id="panel-balance" class="adjustment-panel" style="display: none;">
-            <h3 class="card-title">BALANCE</h3>
+            <h2 class="card-title">BALANCE</h2>
             <div class="slider-group">
                 <label class="body-text">TEMPERATURA</label>
                 <input type="range" class="range-slider" min="0" max="100" value="50">
@@ -156,7 +156,7 @@
 
         <!-- Panel: Filtros -->
         <div id="panel-filtros" class="adjustment-panel" style="display: none;">
-            <h3 class="card-title">FILTROS</h3>
+            <h2 class="card-title">FILTROS</h2>
             <div class="filters-grid">
                 <label class="filter-option"><input type="checkbox"> ESCALA DE GRISES</label>
                 <label class="filter-option"><input type="checkbox"> SEPIA</label>
@@ -183,7 +183,7 @@
 </script>
     
         <section class="prompt-section">
-            <label for="ai-prompts" class="category" style="display: block; text-align: center;">Añade Prompts</p>
+            <label for="ai-prompts" class="category" style="display: block; text-align: center;">Añade Prompts</label>
             <textarea id="ai-prompts" class="prompt-input" placeholder="Ej: Añade un cielo estrellado..."></textarea>
         </section>
       
