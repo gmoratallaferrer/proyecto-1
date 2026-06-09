@@ -35,44 +35,45 @@
             <p class="body-text"><strong>Modifica la obra libremente</strong></p>
         </section>
     
-        <!-- ACCESIBILIDAD 1.1.1 / 1.3.1: Etiquetas claras para botones de acción -->
         <nav class="expo-actions" aria-label="Herramientas de edición">
             <button class="icon-btn" aria-label="Reiniciar cambios">
-                <img src="../images/rotacion.png" alt="" aria-hidden="true" class="action-icon">
+                <img src="images/rotacion.png" alt="" aria-hidden="true" class="action-icon">
             </button>
             <button class="icon-btn" aria-label="Compartir obra">
-                <img src="../images/compartir.png" alt="" aria-hidden="true" class="action-icon">
+                <img src="images/compartir.png" alt="" aria-hidden="true" class="action-icon">
             </button>
             <button class="icon-btn" aria-label="Descargar imagen">
-                <img src="../images/descargas.png" alt="" aria-hidden="true" class="action-icon">
+                <img src="images/descargas.png" alt="" aria-hidden="true" class="action-icon">
             </button>
             <button class="icon-btn" aria-label="Ver historial de cambios">
-                <img src="../images/historial.png" alt="" aria-hidden="true" class="action-icon">
+                <img src="images/historial.png" alt="" aria-hidden="true" class="action-icon">
             </button>
         </nav>
     
-        <!-- Obra Principal con ID para manipulación -->
         <div class="main-canvas">
             <figure class="img-container canvas-frame">
-                <img id="main-image" src="../images/paisaje1.jpg" alt="Paisaje de montaña: obra interactiva actual" class="card-image">
+                <img id="main-image" src="images/paisaje1.jpg" alt="Paisaje de montaña" class="card-image">
             </figure>
         </div>
     
-        <!-- ACCESIBILIDAD 1.3.1: Galería de selección con roles adecuados -->
         <section class="selector-section" aria-labelledby="selector-title">
             <p id="selector-title" class="category">Elige una obra inicial</p>
             <div class="thumbs-grid" role="listbox" aria-label="Selecciona una miniatura para cambiar la obra principal">
                 <button class="thumb-item active" role="option" aria-selected="true" onclick="changeMainImage(this)">
-                    <img src="../images/paisaje2.jpg" alt="Paisaje costero">
+                    <img src="images/paisaje2.jpg" alt="Puente sobre el lago">
                 </button>
                 <button class="thumb-item" role="option" aria-selected="false" onclick="changeMainImage(this)">
-                    <img src="../images/paisaje3.jpg" alt="Puente sobre lago">
+                    <img src="images/paisaje3.jpg" alt="Paisaje costero">
                 </button>
-                <!-- ... resto de imágenes ... -->
+                <button class="thumb-item" role="option" aria-selected="false" onclick="changeMainImage(this)">
+                    <img src="images/paisaje4.jpg" alt="Campo con hierba verde">
+                </button>
+                <button class="thumb-item" role="option" aria-selected="false" onclick="changeMainImage(this)">
+                    <img src="images/paisaje5.jpg" alt="Árbol en un campo de flores moradas">
+                </button>
             </div>
         </section>
     
-        <!-- ACCESIBILIDAD 1.3.1 / 1.3: Uso de fieldset y labels vinculados -->
         <section class="controls-section">
             <h2 class="category" style="text-align: center;">Modifica parámetros</h2>
             
@@ -97,7 +98,6 @@
             </div>
         </section>
     
-        <!-- ACCESIBILIDAD 1.1 / 1.3.1: Prompt con label explícito -->
         <section class="prompt-section">
             <label for="ai-prompts" class="category" style="display: block; text-align: center;">Añade Prompts</p>
             <textarea id="ai-prompts" class="prompt-input" placeholder="Ej: Añade un cielo estrellado..."></textarea>
